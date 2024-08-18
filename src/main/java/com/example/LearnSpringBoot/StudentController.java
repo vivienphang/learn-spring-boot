@@ -32,7 +32,7 @@ public class StudentController {
     }
 
     @PatchMapping("/update")
-    public Student findAndUpdateStudent(@RequestParam("student_id") Long id, @RequestParam("new_email") String email) {
+    public Student findAndUpdateStudent(@RequestParam("student_id") String id, @RequestParam("new_email") String email) {
         // Note: Optional because id can be missing or not provided
         Optional<Student> student = repository.findById(id);
         if (student.isPresent()) {
